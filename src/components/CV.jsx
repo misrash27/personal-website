@@ -43,7 +43,7 @@ const education = [
     degree: 'B.S. Computer Science & Mathematics',
     school: 'University of Michigan',
     period: '2017 – 2021',
-    detail: 'Magna Cum Laude · Dean\'s List',
+    detail: "Magna Cum Laude · Dean's List",
   },
 ]
 
@@ -65,12 +65,13 @@ export default function CV() {
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="flex items-start justify-between mb-16">
         <div>
-          <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">Ashvin Misro</h1>
-          <p className="text-gray-500 mt-1 text-sm">Software Engineer · ML Researcher · San Francisco</p>
+          <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/cv</p>
+          <h1 className="text-2xl font-semibold text-slate-100 tracking-tight">Ashvin Misro</h1>
+          <p className="text-slate-500 mt-1 text-sm">Software Engineer · ML Researcher · San Francisco</p>
         </div>
         <button
           onClick={() => window.print()}
-          className="text-sm text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 hover:border-gray-400 px-4 py-1.5 rounded-md"
+          className="text-sm text-slate-500 hover:text-slate-300 transition-colors border border-[#21262d] hover:border-slate-600 px-4 py-1.5 rounded-md"
         >
           Print / PDF
         </button>
@@ -82,16 +83,16 @@ export default function CV() {
             <div key={i}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
                 <div>
-                  <span className="font-medium text-gray-900">{job.role}</span>
-                  <span className="text-gray-400 mx-2">·</span>
-                  <span className="text-gray-600">{job.company}</span>
+                  <span className="font-medium text-slate-200">{job.role}</span>
+                  <span className="text-slate-600 mx-2">·</span>
+                  <span className="text-slate-400">{job.company}</span>
                 </div>
-                <div className="text-sm text-gray-400">{job.period} · {job.location}</div>
+                <div className="text-sm text-slate-600 font-mono">{job.period} · {job.location}</div>
               </div>
               <ul className="space-y-1.5">
                 {job.bullets.map((b, j) => (
-                  <li key={j} className="text-sm text-gray-600 flex gap-3">
-                    <span className="text-gray-300 mt-0.5 flex-shrink-0">—</span>
+                  <li key={j} className="text-sm text-slate-400 flex gap-3">
+                    <span className="text-slate-700 mt-0.5 flex-shrink-0">—</span>
                     {b}
                   </li>
                 ))}
@@ -107,13 +108,13 @@ export default function CV() {
             <div key={i}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                 <div>
-                  <span className="font-medium text-gray-900">{edu.degree}</span>
-                  <span className="text-gray-400 mx-2">·</span>
-                  <span className="text-gray-600">{edu.school}</span>
+                  <span className="font-medium text-slate-200">{edu.degree}</span>
+                  <span className="text-slate-600 mx-2">·</span>
+                  <span className="text-slate-400">{edu.school}</span>
                 </div>
-                <span className="text-sm text-gray-400">{edu.period}</span>
+                <span className="text-sm text-slate-600 font-mono">{edu.period}</span>
               </div>
-              <p className="text-sm text-gray-400">{edu.detail}</p>
+              <p className="text-sm text-slate-600">{edu.detail}</p>
             </div>
           ))}
         </div>
@@ -123,8 +124,8 @@ export default function CV() {
         <div className="space-y-5">
           {publications.map((pub, i) => (
             <div key={i}>
-              <p className="text-gray-900 font-medium text-sm mb-0.5">{pub.title}</p>
-              <p className="text-sm text-gray-400">{pub.venue} · {pub.authors}</p>
+              <p className="text-slate-200 font-medium text-sm mb-0.5">{pub.title}</p>
+              <p className="text-sm text-slate-600">{pub.venue} · {pub.authors}</p>
             </div>
           ))}
         </div>
@@ -136,9 +137,10 @@ export default function CV() {
 function CVSection({ title, children }) {
   return (
     <section className="mb-14">
-      <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-7 pb-3 border-b border-gray-100">
-        {title}
-      </h2>
+      <div className="flex items-center gap-4 mb-7">
+        <h2 className="text-xs font-mono text-slate-600 uppercase tracking-widest">{title}</h2>
+        <div className="flex-1 h-px bg-[#21262d]" />
+      </div>
       {children}
     </section>
   )

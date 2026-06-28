@@ -9,36 +9,25 @@ export default function AboutMe() {
     <div className="max-w-4xl mx-auto px-6 py-20">
       {/* Hero */}
       <div className="mb-20">
-        <h1 className="text-4xl font-semibold text-gray-900 mb-4 tracking-tight">
+        <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/about</p>
+        <h1 className="text-4xl font-semibold text-slate-100 mb-4 tracking-tight leading-tight">
           Ashvin Misro
         </h1>
-        <p className="text-lg text-gray-500 mb-6 max-w-xl leading-relaxed">
-          Software engineer and researcher focused on machine learning systems and
-          full-stack development. Based in San Francisco.
+        <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
+          Software engineer and researcher focused on machine learning systems
+          and full-stack development. Based in San Francisco.
         </p>
-        <div className="flex items-center gap-5">
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-1.5"
-          >
-            <GithubIcon />
-            GitHub
+        <div className="flex flex-wrap items-center gap-5">
+          <a href="https://github.com" target="_blank" rel="noreferrer"
+            className="text-sm text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5">
+            <GithubIcon /> GitHub
           </a>
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors flex items-center gap-1.5"
-          >
-            <LinkedinIcon />
-            LinkedIn
+          <a href="https://linkedin.com" target="_blank" rel="noreferrer"
+            className="text-sm text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5">
+            <LinkedinIcon /> LinkedIn
           </a>
-          <a
-            href="mailto:ashvin.misro@email.com"
-            className="text-sm text-gray-500 hover:text-gray-900 transition-colors"
-          >
+          <a href="mailto:ashvin.misro@email.com"
+            className="text-sm text-slate-400 hover:text-slate-200 transition-colors">
             ashvin.misro@email.com
           </a>
         </div>
@@ -46,32 +35,28 @@ export default function AboutMe() {
 
       {/* Bio */}
       <section className="mb-20">
-        <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">About</h2>
-        <div className="prose prose-gray max-w-none">
-          <p className="text-gray-700 leading-relaxed mb-4">
-            I build systems at the intersection of machine learning research and production engineering.
-            My work spans distributed ML infrastructure, NLP pipelines, and full-stack web applications.
-          </p>
-          <p className="text-gray-700 leading-relaxed">
-            Previously a research assistant at MIT's AI Lab, where I co-authored work on cross-lingual
-            transfer learning. I care about writing software that is correct, maintainable, and fast.
-          </p>
-        </div>
+        <SectionLabel>About</SectionLabel>
+        <p className="text-slate-400 leading-relaxed mb-4">
+          I build systems at the intersection of machine learning research and production engineering.
+          My work spans distributed ML infrastructure, NLP pipelines, and full-stack web applications.
+        </p>
+        <p className="text-slate-400 leading-relaxed">
+          Previously a research assistant at MIT's AI Lab, where I co-authored work on cross-lingual
+          transfer learning. I care about writing software that is correct, maintainable, and fast.
+        </p>
       </section>
 
       {/* Skills */}
       <section>
-        <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-6">Skills</h2>
-        <div className="space-y-5">
+        <SectionLabel>Skills</SectionLabel>
+        <div className="space-y-4">
           {skills.map(({ category, items }) => (
             <div key={category} className="flex gap-8 items-baseline">
-              <span className="text-sm text-gray-400 w-28 flex-shrink-0">{category}</span>
+              <span className="text-sm text-slate-600 w-28 flex-shrink-0 font-mono">{category}</span>
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
-                  <span
-                    key={item}
-                    className="text-sm text-gray-700 bg-gray-100 px-2.5 py-1 rounded-md"
-                  >
+                  <span key={item}
+                    className="text-sm text-slate-300 bg-[#161b22] border border-[#21262d] px-2.5 py-1 rounded-md">
                     {item}
                   </span>
                 ))}
@@ -81,6 +66,12 @@ export default function AboutMe() {
         </div>
       </section>
     </div>
+  )
+}
+
+function SectionLabel({ children }) {
+  return (
+    <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-6">{children}</p>
   )
 }
 
