@@ -7,7 +7,7 @@ const experience = [
     bullets: [
       'Led development of a distributed ML inference platform serving 10M+ requests/day',
       'Reduced model latency by 40% through custom CUDA kernels and batching optimizations',
-      'Mentored 3 junior engineers and drove adoption of best practices across the team',
+      'Mentored 3 junior engineers and drove adoption of engineering best practices',
     ],
   },
   {
@@ -37,13 +37,13 @@ const education = [
     degree: 'M.S. Computer Science',
     school: 'Massachusetts Institute of Technology',
     period: '2021 – 2023',
-    detail: 'Specialization in Artificial Intelligence • GPA: 4.0 / 4.0',
+    detail: 'Specialization in Artificial Intelligence · GPA 4.0',
   },
   {
     degree: 'B.S. Computer Science & Mathematics',
     school: 'University of Michigan',
     period: '2017 – 2021',
-    detail: 'Magna Cum Laude • Dean\'s List all semesters',
+    detail: 'Magna Cum Laude · Dean\'s List',
   },
 ]
 
@@ -62,43 +62,36 @@ const publications = [
 
 export default function CV() {
   return (
-    <div className="max-w-5xl mx-auto px-6 py-16">
-      <div className="flex items-center justify-between mb-12">
+    <div className="max-w-4xl mx-auto px-6 py-20">
+      <div className="flex items-start justify-between mb-16">
         <div>
-          <p className="text-xs font-semibold tracking-widest text-cyan-400 uppercase mb-2">Curriculum Vitae</p>
-          <h1 className="text-4xl font-bold text-white">Ashvin Misro</h1>
-          <p className="text-slate-400 mt-1">Software Engineer & ML Researcher</p>
+          <h1 className="text-2xl font-semibold text-gray-900 tracking-tight">Ashvin Misro</h1>
+          <p className="text-gray-500 mt-1 text-sm">Software Engineer · ML Researcher · San Francisco</p>
         </div>
         <button
           onClick={() => window.print()}
-          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-medium text-white hover:opacity-90 transition-opacity shadow-lg shadow-cyan-500/25"
+          className="text-sm text-gray-500 hover:text-gray-900 transition-colors border border-gray-200 hover:border-gray-400 px-4 py-1.5 rounded-md"
         >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-          </svg>
-          Download PDF
+          Print / PDF
         </button>
       </div>
 
-      {/* Experience */}
       <CVSection title="Experience">
-        <div className="space-y-6">
+        <div className="space-y-10">
           {experience.map((job, i) => (
-            <div key={i} className="glass rounded-2xl p-6 hover:border-cyan-500/30 transition-all">
-              <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
+            <div key={i}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{job.role}</h3>
-                  <p className="text-cyan-400 font-medium">{job.company}</p>
+                  <span className="font-medium text-gray-900">{job.role}</span>
+                  <span className="text-gray-400 mx-2">·</span>
+                  <span className="text-gray-600">{job.company}</span>
                 </div>
-                <div className="text-right">
-                  <p className="text-sm text-slate-400">{job.period}</p>
-                  <p className="text-sm text-slate-500">{job.location}</p>
-                </div>
+                <div className="text-sm text-gray-400">{job.period} · {job.location}</div>
               </div>
               <ul className="space-y-1.5">
                 {job.bullets.map((b, j) => (
-                  <li key={j} className="flex gap-3 text-sm text-slate-400">
-                    <span className="text-cyan-500 mt-0.5 flex-shrink-0">▸</span>
+                  <li key={j} className="text-sm text-gray-600 flex gap-3">
+                    <span className="text-gray-300 mt-0.5 flex-shrink-0">—</span>
                     {b}
                   </li>
                 ))}
@@ -108,34 +101,30 @@ export default function CV() {
         </div>
       </CVSection>
 
-      {/* Education */}
       <CVSection title="Education">
-        <div className="space-y-4">
+        <div className="space-y-6">
           {education.map((edu, i) => (
-            <div key={i} className="glass rounded-2xl p-6 hover:border-cyan-500/30 transition-all">
-              <div className="flex flex-wrap items-start justify-between gap-2">
+            <div key={i}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
                 <div>
-                  <h3 className="text-lg font-semibold text-white">{edu.degree}</h3>
-                  <p className="text-cyan-400 font-medium">{edu.school}</p>
-                  <p className="text-sm text-slate-400 mt-1">{edu.detail}</p>
+                  <span className="font-medium text-gray-900">{edu.degree}</span>
+                  <span className="text-gray-400 mx-2">·</span>
+                  <span className="text-gray-600">{edu.school}</span>
                 </div>
-                <p className="text-sm text-slate-400">{edu.period}</p>
+                <span className="text-sm text-gray-400">{edu.period}</span>
               </div>
+              <p className="text-sm text-gray-400">{edu.detail}</p>
             </div>
           ))}
         </div>
       </CVSection>
 
-      {/* Publications */}
       <CVSection title="Publications">
-        <div className="space-y-4">
+        <div className="space-y-5">
           {publications.map((pub, i) => (
-            <div key={i} className="glass rounded-2xl p-5 hover:border-cyan-500/30 transition-all">
-              <h3 className="font-semibold text-white mb-1">{pub.title}</h3>
-              <div className="flex flex-wrap gap-3 text-sm">
-                <span className="px-2.5 py-0.5 bg-cyan-500/10 border border-cyan-500/30 rounded-md text-cyan-400 font-medium">{pub.venue}</span>
-                <span className="text-slate-400">{pub.authors}</span>
-              </div>
+            <div key={i}>
+              <p className="text-gray-900 font-medium text-sm mb-0.5">{pub.title}</p>
+              <p className="text-sm text-gray-400">{pub.venue} · {pub.authors}</p>
             </div>
           ))}
         </div>
@@ -146,11 +135,10 @@ export default function CV() {
 
 function CVSection({ title, children }) {
   return (
-    <section className="mb-12">
-      <div className="flex items-center gap-4 mb-6">
-        <h2 className="text-xl font-bold text-white">{title}</h2>
-        <div className="flex-1 h-px bg-gradient-to-r from-cyan-500/50 to-transparent" />
-      </div>
+    <section className="mb-14">
+      <h2 className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-7 pb-3 border-b border-gray-100">
+        {title}
+      </h2>
       {children}
     </section>
   )
