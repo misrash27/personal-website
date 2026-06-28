@@ -195,9 +195,8 @@ export default function ScrambleText({ text, delay = 0 }) {
 [System.IO.File]::WriteAllText("$dest\src\components\AboutMe.jsx", @'
 import ScrambleText from './ScrambleText'
 const skills = [
-  { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL'] },
-  { category: 'Frameworks', items: ['React', 'Node.js', 'FastAPI', 'PyTorch', 'TensorFlow'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'PostgreSQL', 'Linux'] },
+  { category: 'Interests', items: ['Robotics', 'Data Analytics', 'Web Development', 'Leadership'] },
+  { category: 'Activities', items: ['FRC Team 1318', 'ASB', 'Issaquah High School'] },
 ]
 export default function AboutMe() {
   return (
@@ -242,21 +241,14 @@ export default function AboutMe() {
 '@, $enc)
 
 [System.IO.File]::WriteAllText("$dest\src\components\CV.jsx", @'
-const experience = [
-  { role: 'Software Engineer', company: 'Tech Corp', period: '2023 - Present', location: 'San Francisco, CA',
-    bullets: ['Led development of a distributed ML inference platform serving 10M+ requests/day','Reduced model latency by 40% through custom CUDA kernels and batching optimizations','Mentored 3 junior engineers and drove adoption of engineering best practices'] },
-  { role: 'Machine Learning Intern', company: 'AI Startup', period: 'Summer 2022', location: 'Remote',
-    bullets: ['Built a transformer-based NLP pipeline for document classification with 94% accuracy','Deployed models to production on AWS SageMaker with automated retraining pipelines'] },
-  { role: 'Research Assistant', company: 'University AI Lab', period: '2021 - 2022', location: 'Cambridge, MA',
-    bullets: ['Investigated self-supervised learning methods for low-resource language tasks','Co-authored a paper accepted at ACL 2022 on cross-lingual transfer learning'] },
+const activities = [
+  { role: 'Analytics Subteam Member', company: 'FRC Team 1318 – Issaquah Eagles', period: '2023 - Present', location: 'Issaquah, WA',
+    bullets: ['Collect and analyze match scouting data to inform drive team strategy during competition','Build tools to visualize robot performance trends across qualification and playoff matches'] },
+  { role: 'Associated Student Body (ASB)', company: 'Issaquah High School', period: '2022 - Present', location: 'Issaquah, WA',
+    bullets: ['Held multiple leadership positions organizing school-wide events and student initiatives','Collaborated with administration and student body to represent school community interests'] },
 ]
 const education = [
-  { degree: 'M.S. Computer Science', school: 'Massachusetts Institute of Technology', period: '2021 - 2023', detail: 'Specialization in Artificial Intelligence · GPA 4.0' },
-  { degree: 'B.S. Computer Science & Mathematics', school: 'University of Michigan', period: '2017 - 2021', detail: "Magna Cum Laude · Dean's List" },
-]
-const publications = [
-  { title: 'Cross-Lingual Transfer via Contrastive Alignment', venue: 'ACL 2022', authors: 'A. Misro, J. Doe, K. Smith' },
-  { title: 'Efficient Sparse Attention for Long-Context Transformers', venue: 'NeurIPS 2023 Workshop', authors: 'A. Misro, M. Chen' },
+  { degree: 'High School Diploma (in progress)', school: 'Issaquah High School', period: '2022 - 2026', detail: 'Rising Senior · Seattle, WA' },
 ]
 export default function CV() {
   return (
@@ -265,40 +257,44 @@ export default function CV() {
         <div>
           <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/cv</p>
           <h1 className="text-2xl font-semibold text-slate-100 tracking-tight">Ashvin Misro</h1>
-          <p className="text-slate-500 mt-1 text-sm">Software Engineer · ML Researcher · San Francisco</p>
+          <p className="text-slate-500 mt-1 text-sm">Student · Robotics · Seattle, WA</p>
         </div>
         <button onClick={() => window.print()} className="text-sm text-slate-500 hover:text-slate-300 border border-[#21262d] hover:border-slate-600 px-4 py-1.5 rounded-md transition-colors">Print / PDF</button>
       </div>
-      {[['Experience', experience], ['Education', education], ['Publications', publications]].map(([title, items]) => (
-        <section key={title} className="mb-14">
-          <div className="flex items-center gap-4 mb-7">
-            <h2 className="text-xs font-mono text-slate-600 uppercase tracking-widest">{title}</h2>
-            <div className="flex-1 h-px bg-[#21262d]" />
-          </div>
-          <div className="space-y-8">
-            {items.map((item, i) => (
-              <div key={i}>
-                {item.role && (
-                  <div className="flex flex-wrap justify-between gap-2 mb-3">
-                    <div><span className="font-medium text-slate-200">{item.role}</span><span className="text-slate-600 mx-2">·</span><span className="text-slate-400">{item.company}</span></div>
-                    <span className="text-sm text-slate-600 font-mono">{item.period} · {item.location}</span>
-                  </div>
-                )}
-                {item.degree && (
-                  <div className="flex flex-wrap justify-between gap-2 mb-1">
-                    <div><span className="font-medium text-slate-200">{item.degree}</span><span className="text-slate-600 mx-2">·</span><span className="text-slate-400">{item.school}</span></div>
-                    <span className="text-sm text-slate-600 font-mono">{item.period}</span>
-                  </div>
-                )}
-                {item.title && <p className="text-slate-200 font-medium text-sm mb-0.5">{item.title}</p>}
-                {item.bullets && <ul className="space-y-1.5">{item.bullets.map((b,j) => <li key={j} className="text-sm text-slate-400 flex gap-3"><span className="text-slate-700 mt-0.5">-</span>{b}</li>)}</ul>}
-                {item.detail && <p className="text-sm text-slate-600">{item.detail}</p>}
-                {item.venue && <p className="text-sm text-slate-600">{item.venue} · {item.authors}</p>}
+      <section className="mb-14">
+        <div className="flex items-center gap-4 mb-7">
+          <h2 className="text-xs font-mono text-slate-600 uppercase tracking-widest">Activities</h2>
+          <div className="flex-1 h-px bg-[#21262d]" />
+        </div>
+        <div className="space-y-8">
+          {activities.map((item, i) => (
+            <div key={i}>
+              <div className="flex flex-wrap justify-between gap-2 mb-3">
+                <div><span className="font-medium text-slate-200">{item.role}</span><span className="text-slate-600 mx-2">·</span><span className="text-slate-400">{item.company}</span></div>
+                <span className="text-sm text-slate-600 font-mono">{item.period} · {item.location}</span>
               </div>
-            ))}
-          </div>
-        </section>
-      ))}
+              <ul className="space-y-1.5">{item.bullets.map((b,j) => <li key={j} className="text-sm text-slate-400 flex gap-3"><span className="text-slate-700 mt-0.5">-</span>{b}</li>)}</ul>
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="mb-14">
+        <div className="flex items-center gap-4 mb-7">
+          <h2 className="text-xs font-mono text-slate-600 uppercase tracking-widest">Education</h2>
+          <div className="flex-1 h-px bg-[#21262d]" />
+        </div>
+        <div className="space-y-6">
+          {education.map((edu, i) => (
+            <div key={i}>
+              <div className="flex flex-wrap justify-between gap-2 mb-1">
+                <div><span className="font-medium text-slate-200">{edu.degree}</span><span className="text-slate-600 mx-2">·</span><span className="text-slate-400">{edu.school}</span></div>
+                <span className="text-sm text-slate-600 font-mono">{edu.period}</span>
+              </div>
+              <p className="text-sm text-slate-600">{edu.detail}</p>
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   )
 }
