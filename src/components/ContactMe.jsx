@@ -19,17 +19,17 @@ export default function ContactMe() {
         <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/contact</p>
         <h1 className="text-2xl font-semibold text-slate-100 tracking-tight mb-3">Get in touch</h1>
         <p className="text-slate-500 text-sm leading-relaxed max-w-md">
-          Open to research collaborations, engineering roles, and interesting projects.
+          Feel free to reach out about robotics, tech projects, or anything else.
           The best way to reach me is by email.
         </p>
       </div>
 
       <div className="grid md:grid-cols-5 gap-16">
         <div className="md:col-span-2 space-y-7">
-          <ContactRow label="Email" value="ashvin.misro@email.com" href="mailto:ashvin.misro@email.com" />
-          <ContactRow label="LinkedIn" value="linkedin.com/in/ashvinmisro" href="https://linkedin.com" />
-          <ContactRow label="GitHub" value="github.com/ashvinmisro" href="https://github.com" />
-          <ContactRow label="Location" value="San Francisco, CA" />
+          <ContactRow label="Email" value="ashmisro@gmail.com" href="mailto:ashmisro@gmail.com" />
+          <ContactRow label="LinkedIn" value="linkedin.com/in/ashvin-misro" href="https://www.linkedin.com/in/ashvin-misro-6171413a8/" />
+          <ContactRow label="GitHub" value="github.com/misrash27" href="https://github.com/misrash27" />
+          <ContactRow label="Location" value="Seattle, WA" />
         </div>
 
         <div className="md:col-span-3">

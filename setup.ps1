@@ -208,18 +208,18 @@ export default function AboutMe() {
           <ScrambleText text="Ashvin Misro" />
         </h1>
         <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-          Software engineer and researcher focused on machine learning systems and full-stack development. Based in San Francisco.
+          Rising senior at Issaquah High School with a passion for robotics and technology. Based in Seattle, WA.
         </p>
         <div className="flex flex-wrap items-center gap-5">
-          <a href="https://github.com" target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">LinkedIn</a>
-          <a href="mailto:ashvin.misro@email.com" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">ashvin.misro@email.com</a>
+          <a href="https://github.com/misrash27" target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">GitHub</a>
+          <a href="https://www.linkedin.com/in/ashvin-misro-6171413a8/" target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">LinkedIn</a>
+          <a href="mailto:ashmisro@gmail.com" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">ashmisro@gmail.com</a>
         </div>
       </div>
       <section className="mb-20">
         <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-6">About</p>
-        <p className="text-slate-400 leading-relaxed mb-4">I build systems at the intersection of machine learning research and production engineering. My work spans distributed ML infrastructure, NLP pipelines, and full-stack web applications.</p>
-        <p className="text-slate-400 leading-relaxed">Previously a research assistant at MIT's AI Lab, where I co-authored work on cross-lingual transfer learning. I care about writing software that is correct, maintainable, and fast.</p>
+        <p className="text-slate-400 leading-relaxed mb-4">I'm a student at Issaquah High School where I'm involved in ASB, having held multiple leadership positions. I care about building things — whether that's organizing events or writing code.</p>
+        <p className="text-slate-400 leading-relaxed">I'm on FRC Team 1318 (Issaquah Eagles) as part of the analytics subteam, where I use data to help our drive team make better decisions during competition.</p>
       </section>
       <section>
         <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-6">Skills</p>
@@ -316,11 +316,11 @@ export default function ContactMe() {
       <div className="mb-14">
         <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/contact</p>
         <h1 className="text-2xl font-semibold text-slate-100 tracking-tight mb-3">Get in touch</h1>
-        <p className="text-slate-500 text-sm leading-relaxed max-w-md">Open to research collaborations, engineering roles, and interesting projects.</p>
+        <p className="text-slate-500 text-sm leading-relaxed max-w-md">Feel free to reach out about robotics, tech projects, or anything else. The best way to reach me is by email.</p>
       </div>
       <div className="grid md:grid-cols-5 gap-16">
         <div className="md:col-span-2 space-y-7">
-          {[['Email','ashvin.misro@email.com','mailto:ashvin.misro@email.com'],['LinkedIn','linkedin.com/in/ashvinmisro','https://linkedin.com'],['GitHub','github.com/ashvinmisro','https://github.com'],['Location','San Francisco, CA',null]].map(([label,value,href])=>(
+          {[['Email','ashmisro@gmail.com','mailto:ashmisro@gmail.com'],['LinkedIn','linkedin.com/in/ashvin-misro','https://www.linkedin.com/in/ashvin-misro-6171413a8/'],['GitHub','github.com/misrash27','https://github.com/misrash27'],['Location','Seattle, WA',null]].map(([label,value,href])=>(
             <div key={label}>
               <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-1">{label}</p>
               {href ? <a href={href} target="_blank" rel="noreferrer" className="text-sm text-slate-400 hover:text-slate-200 transition-colors">{value}</a> : <p className="text-sm text-slate-400">{value}</p>}

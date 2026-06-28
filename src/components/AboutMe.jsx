@@ -16,21 +16,21 @@ export default function AboutMe() {
           <ScrambleText text="Ashvin Misro" />
         </h1>
         <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-          Software engineer and researcher focused on machine learning systems
-          and full-stack development. Based in San Francisco.
+          Rising senior at Issaquah High School with a passion for robotics and technology.
+          Based in Seattle, WA.
         </p>
         <div className="flex flex-wrap items-center gap-5">
-          <a href="https://github.com" target="_blank" rel="noreferrer"
+          <a href="https://github.com/misrash27" target="_blank" rel="noreferrer"
             className="text-sm text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5">
             <GithubIcon /> GitHub
           </a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"
+          <a href="https://www.linkedin.com/in/ashvin-misro-6171413a8/" target="_blank" rel="noreferrer"
             className="text-sm text-slate-400 hover:text-slate-200 transition-colors flex items-center gap-1.5">
             <LinkedinIcon /> LinkedIn
           </a>
-          <a href="mailto:ashvin.misro@email.com"
+          <a href="mailto:ashmisro@gmail.com"
             className="text-sm text-slate-400 hover:text-slate-200 transition-colors">
-            ashvin.misro@email.com
+            ashmisro@gmail.com
           </a>
         </div>
       </div>
@@ -39,12 +39,13 @@ export default function AboutMe() {
       <section className="mb-20">
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
-          I build systems at the intersection of machine learning research and production engineering.
-          My work spans distributed ML infrastructure, NLP pipelines, and full-stack web applications.
+          I'm a student at Issaquah High School where I'm involved in ASB, having held multiple
+          leadership positions. I care about building things — whether that's organizing events or
+          writing code.
         </p>
         <p className="text-slate-400 leading-relaxed">
-          Previously a research assistant at MIT's AI Lab, where I co-authored work on cross-lingual
-          transfer learning. I care about writing software that is correct, maintainable, and fast.
+          I'm on FRC Team 1318 (Issaquah Eagles) as part of the analytics subteam, where I use
+          data to help our drive team make better decisions during competition.
         </p>
       </section>
 
