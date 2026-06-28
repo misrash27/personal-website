@@ -1,62 +1,32 @@
-const experience = [
+const activities = [
   {
-    role: 'Software Engineer',
-    company: 'Tech Corp',
+    role: 'Analytics Subteam Member',
+    company: 'FRC Team 1318 – Issaquah Eagles',
     period: '2023 – Present',
-    location: 'San Francisco, CA',
+    location: 'Issaquah, WA',
     bullets: [
-      'Led development of a distributed ML inference platform serving 10M+ requests/day',
-      'Reduced model latency by 40% through custom CUDA kernels and batching optimizations',
-      'Mentored 3 junior engineers and drove adoption of engineering best practices',
+      'Collect and analyze match scouting data to inform drive team strategy during competition',
+      'Build tools to visualize robot performance trends across qualification and playoff matches',
     ],
   },
   {
-    role: 'Machine Learning Intern',
-    company: 'AI Startup',
-    period: 'Summer 2022',
-    location: 'Remote',
+    role: 'Associated Student Body (ASB)',
+    company: 'Issaquah High School',
+    period: '2022 – Present',
+    location: 'Issaquah, WA',
     bullets: [
-      'Built a transformer-based NLP pipeline for document classification with 94% accuracy',
-      'Deployed models to production on AWS SageMaker with automated retraining pipelines',
-    ],
-  },
-  {
-    role: 'Research Assistant',
-    company: 'University AI Lab',
-    period: '2021 – 2022',
-    location: 'Cambridge, MA',
-    bullets: [
-      'Investigated self-supervised learning methods for low-resource language tasks',
-      'Co-authored a paper accepted at ACL 2022 on cross-lingual transfer learning',
+      'Held multiple leadership positions organizing school-wide events and student initiatives',
+      'Collaborated with administration and student body to represent school community interests',
     ],
   },
 ]
 
 const education = [
   {
-    degree: 'M.S. Computer Science',
-    school: 'Massachusetts Institute of Technology',
-    period: '2021 – 2023',
-    detail: 'Specialization in Artificial Intelligence · GPA 4.0',
-  },
-  {
-    degree: 'B.S. Computer Science & Mathematics',
-    school: 'University of Michigan',
-    period: '2017 – 2021',
-    detail: "Magna Cum Laude · Dean's List",
-  },
-]
-
-const publications = [
-  {
-    title: 'Cross-Lingual Transfer via Contrastive Alignment',
-    venue: 'ACL 2022',
-    authors: 'A. Misro, J. Doe, K. Smith',
-  },
-  {
-    title: 'Efficient Sparse Attention for Long-Context Transformers',
-    venue: 'NeurIPS 2023 Workshop',
-    authors: 'A. Misro, M. Chen',
+    degree: 'High School Diploma (in progress)',
+    school: 'Issaquah High School',
+    period: '2022 – 2026',
+    detail: 'Rising Senior · Seattle, WA',
   },
 ]
 
@@ -67,7 +37,7 @@ export default function CV() {
         <div>
           <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/cv</p>
           <h1 className="text-2xl font-semibold text-slate-100 tracking-tight">Ashvin Misro</h1>
-          <p className="text-slate-500 mt-1 text-sm">Software Engineer · ML Researcher · San Francisco</p>
+          <p className="text-slate-500 mt-1 text-sm">Student · Robotics · Seattle, WA</p>
         </div>
         <button
           onClick={() => window.print()}
@@ -77,20 +47,20 @@ export default function CV() {
         </button>
       </div>
 
-      <CVSection title="Experience">
+      <CVSection title="Activities">
         <div className="space-y-10">
-          {experience.map((job, i) => (
+          {activities.map((item, i) => (
             <div key={i}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
                 <div>
-                  <span className="font-medium text-slate-200">{job.role}</span>
+                  <span className="font-medium text-slate-200">{item.role}</span>
                   <span className="text-slate-600 mx-2">·</span>
-                  <span className="text-slate-400">{job.company}</span>
+                  <span className="text-slate-400">{item.company}</span>
                 </div>
-                <div className="text-sm text-slate-600 font-mono">{job.period} · {job.location}</div>
+                <div className="text-sm text-slate-600 font-mono">{item.period} · {item.location}</div>
               </div>
               <ul className="space-y-1.5">
-                {job.bullets.map((b, j) => (
+                {item.bullets.map((b, j) => (
                   <li key={j} className="text-sm text-slate-400 flex gap-3">
                     <span className="text-slate-700 mt-0.5 flex-shrink-0">—</span>
                     {b}
@@ -120,16 +90,6 @@ export default function CV() {
         </div>
       </CVSection>
 
-      <CVSection title="Publications">
-        <div className="space-y-5">
-          {publications.map((pub, i) => (
-            <div key={i}>
-              <p className="text-slate-200 font-medium text-sm mb-0.5">{pub.title}</p>
-              <p className="text-sm text-slate-600">{pub.venue} · {pub.authors}</p>
-            </div>
-          ))}
-        </div>
-      </CVSection>
     </div>
   )
 }

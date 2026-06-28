@@ -1,9 +1,8 @@
 import ScrambleText from './ScrambleText'
 
 const skills = [
-  { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL'] },
-  { category: 'Frameworks', items: ['React', 'Node.js', 'FastAPI', 'PyTorch', 'TensorFlow'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'PostgreSQL', 'Linux'] },
+  { category: 'Interests', items: ['Robotics', 'Data Analytics', 'Web Development', 'Leadership'] },
+  { category: 'Activities', items: ['FRC Team 1318', 'ASB', 'Issaquah High School'] },
 ]
 
 export default function AboutMe() {
