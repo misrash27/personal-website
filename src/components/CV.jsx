@@ -19,6 +19,22 @@ const activities = [
       'Collaborated with administration and student body to represent school community interests',
     ],
   },
+  {
+    role: 'Tennis Team',
+    company: 'Issaquah High School',
+    period: '2022 – Present',
+    location: 'Issaquah, WA',
+    bullets: [
+      'Compete as a member of the high school tennis team',
+    ],
+  },
+]
+
+const skills = [
+  { category: 'Technical', items: ['Python', 'HTML', 'Java', 'Data Analysis'] },
+  { category: 'Languages', items: ['English', 'Spanish (Advanced Proficiency)'] },
+  { category: 'Certifications', items: ['Java Certified'] },
+  { category: 'Other', items: ['Leadership', 'Skiing', 'Tennis'] },
 ]
 
 const education = [
@@ -67,6 +83,23 @@ export default function CV() {
                   </li>
                 ))}
               </ul>
+            </div>
+          ))}
+        </div>
+      </CVSection>
+
+      <CVSection title="Skills">
+        <div className="space-y-4">
+          {skills.map(({ category, items }) => (
+            <div key={category} className="flex gap-8 items-baseline">
+              <span className="text-sm text-slate-600 w-32 flex-shrink-0 font-mono">{category}</span>
+              <div className="flex flex-wrap gap-2">
+                {items.map((item) => (
+                  <span key={item} className="text-sm text-slate-300 bg-[#161b22] border border-[#21262d] px-2.5 py-1 rounded-md">
+                    {item}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>

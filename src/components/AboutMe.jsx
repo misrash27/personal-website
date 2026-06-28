@@ -1,8 +1,9 @@
 import ScrambleText from './ScrambleText'
 
 const skills = [
-  { category: 'Interests', items: ['Robotics', 'Data Analytics', 'Web Development', 'Leadership'] },
-  { category: 'Activities', items: ['FRC Team 1318', 'ASB', 'Issaquah High School'] },
+  { category: 'Technical', items: ['Python', 'HTML', 'Java', 'Data Analysis'] },
+  { category: 'Languages', items: ['English', 'Spanish (Advanced)'] },
+  { category: 'Other', items: ['Leadership', 'Java Certified'] },
 ]
 
 export default function AboutMe() {
@@ -39,12 +40,12 @@ export default function AboutMe() {
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
           I'm a student at Issaquah High School where I'm involved in ASB, having held multiple
-          leadership positions. I care about building things — whether that's organizing events or
-          writing code.
+          leadership positions. I'm also on the varsity tennis team and on FRC Team 1318 (Issaquah
+          Eagles) as part of the analytics subteam, using data to help our drive team make better
+          decisions during competition.
         </p>
         <p className="text-slate-400 leading-relaxed">
-          I'm on FRC Team 1318 (Issaquah Eagles) as part of the analytics subteam, where I use
-          data to help our drive team make better decisions during competition.
+          Outside of school I enjoy skiing and listening to music.
         </p>
       </section>
 
