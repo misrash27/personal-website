@@ -40,7 +40,7 @@ export default function AboutMe() {
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
           I'm a student at Issaquah High School where I'm involved in ASB, having held multiple
-          leadership positions. I'm also on the varsity tennis team and on FRC Team 1318 (Issaquah
+          leadership positions. I'm also on the tennis team and on FRC Team 1318 (Issaquah
           Eagles) as part of the analytics subteam, using data to help our drive team make better
           decisions during competition.
         </p>
