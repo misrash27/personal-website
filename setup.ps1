@@ -5,10 +5,11 @@ $dest = "$env:USERPROFILE\ashvin-website"
 New-Item -ItemType Directory -Force -Path $dest | Out-Null
 New-Item -ItemType Directory -Force -Path "$dest\src\components" | Out-Null
 
+$enc = New-Object System.Text.UTF8Encoding $false
+
 Write-Host "Creating project files..." -ForegroundColor Cyan
 
-# package.json
-@'
+[System.IO.File]::WriteAllText("$dest\package.json", @'
 {
   "name": "personal-website",
   "private": true,
@@ -31,17 +32,15 @@ Write-Host "Creating project files..." -ForegroundColor Cyan
     "vite": "^5.4.1"
   }
 }
-'@ | Set-Content "$dest\package.json" -Encoding UTF8
+'@, $enc)
 
-# vite.config.js
-@'
+[System.IO.File]::WriteAllText("$dest\vite.config.js", @'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 export default defineConfig({ plugins: [react()] })
-'@ | Set-Content "$dest\vite.config.js" -Encoding UTF8
+'@, $enc)
 
-# tailwind.config.js
-@'
+[System.IO.File]::WriteAllText("$dest\tailwind.config.js", @'
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
@@ -54,15 +53,13 @@ export default {
   },
   plugins: [],
 }
-'@ | Set-Content "$dest\tailwind.config.js" -Encoding UTF8
+'@, $enc)
 
-# postcss.config.js
-@'
+[System.IO.File]::WriteAllText("$dest\postcss.config.js", @'
 export default { plugins: { tailwindcss: {}, autoprefixer: {} } }
-'@ | Set-Content "$dest\postcss.config.js" -Encoding UTF8
+'@, $enc)
 
-# index.html
-@'
+[System.IO.File]::WriteAllText("$dest\index.html", @'
 <!doctype html>
 <html lang="en">
   <head>
@@ -78,10 +75,9 @@ export default { plugins: { tailwindcss: {}, autoprefixer: {} } }
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
-'@ | Set-Content "$dest\index.html" -Encoding UTF8
+'@, $enc)
 
-# src/index.css
-@'
+[System.IO.File]::WriteAllText("$dest\src\index.css", @'
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -92,19 +88,17 @@ export default { plugins: { tailwindcss: {}, autoprefixer: {} } }
   ::-webkit-scrollbar-track { @apply bg-transparent; }
   ::-webkit-scrollbar-thumb { @apply bg-slate-700 rounded-full; }
 }
-'@ | Set-Content "$dest\src\index.css" -Encoding UTF8
+'@, $enc)
 
-# src/main.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\main.jsx", @'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 createRoot(document.getElementById('root')).render(<StrictMode><App /></StrictMode>)
-'@ | Set-Content "$dest\src\main.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/App.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\App.jsx", @'
 import { useState } from 'react'
 import AboutMe from './components/AboutMe'
 import CV from './components/CV'
@@ -128,10 +122,9 @@ export default function App() {
     </div>
   )
 }
-'@ | Set-Content "$dest\src\App.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/Navbar.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\Navbar.jsx", @'
 export default function Navbar({ activeTab, setActiveTab, tabs }) {
   return (
     <header className="border-b border-[#21262d] bg-[#0d1117]/80 backdrop-blur sticky top-0 z-50">
@@ -149,18 +142,17 @@ export default function Navbar({ activeTab, setActiveTab, tabs }) {
     </header>
   )
 }
-'@ | Set-Content "$dest\src\components\Navbar.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/CursorSpotlight.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\CursorSpotlight.jsx", @'
 import { useEffect, useRef } from 'react'
 export default function CursorSpotlight() {
   const ref = useRef(null)
   useEffect(() => {
     const el = ref.current
     const move = (e) => {
-      el.style.setProperty('--x', `${e.clientX}px`)
-      el.style.setProperty('--y', `${e.clientY}px`)
+      el.style.setProperty('--x', e.clientX + 'px')
+      el.style.setProperty('--y', e.clientY + 'px')
       el.style.opacity = '1'
     }
     const leave = () => { el.style.opacity = '0' }
@@ -173,10 +165,9 @@ export default function CursorSpotlight() {
       style={{ opacity: 0, background: 'radial-gradient(600px circle at var(--x,50%) var(--y,50%), rgba(59,130,246,0.07), transparent 70%)' }} />
   )
 }
-'@ | Set-Content "$dest\src\components\CursorSpotlight.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/ScrambleText.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\ScrambleText.jsx", @'
 import { useEffect, useState, useRef } from 'react'
 const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
 export default function ScrambleText({ text, delay = 0 }) {
@@ -199,10 +190,9 @@ export default function ScrambleText({ text, delay = 0 }) {
   }, [text, delay])
   return <span>{display}</span>
 }
-'@ | Set-Content "$dest\src\components\ScrambleText.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/AboutMe.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\AboutMe.jsx", @'
 import ScrambleText from './ScrambleText'
 const skills = [
   { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL'] },
@@ -249,10 +239,9 @@ export default function AboutMe() {
     </div>
   )
 }
-'@ | Set-Content "$dest\src\components\AboutMe.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/CV.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\CV.jsx", @'
 const experience = [
   { role: 'Software Engineer', company: 'Tech Corp', period: '2023 - Present', location: 'San Francisco, CA',
     bullets: ['Led development of a distributed ML inference platform serving 10M+ requests/day','Reduced model latency by 40% through custom CUDA kernels and batching optimizations','Mentored 3 junior engineers and drove adoption of engineering best practices'] },
@@ -313,10 +302,9 @@ export default function CV() {
     </div>
   )
 }
-'@ | Set-Content "$dest\src\components\CV.jsx" -Encoding UTF8
+'@, $enc)
 
-# src/components/ContactMe.jsx
-@'
+[System.IO.File]::WriteAllText("$dest\src\components\ContactMe.jsx", @'
 import { useState } from 'react'
 export default function ContactMe() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -361,7 +349,7 @@ export default function ContactMe() {
     </div>
   )
 }
-'@ | Set-Content "$dest\src\components\ContactMe.jsx" -Encoding UTF8
+'@, $enc)
 
 Write-Host ""
 Write-Host "All files created at: $dest" -ForegroundColor Green
