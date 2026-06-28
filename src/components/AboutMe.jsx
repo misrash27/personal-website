@@ -1,3 +1,5 @@
+import ScrambleText from './ScrambleText'
+
 const skills = [
   { category: 'Languages', items: ['Python', 'JavaScript', 'TypeScript', 'C++', 'SQL'] },
   { category: 'Frameworks', items: ['React', 'Node.js', 'FastAPI', 'PyTorch', 'TensorFlow'] },
@@ -10,8 +12,8 @@ export default function AboutMe() {
       {/* Hero */}
       <div className="mb-20">
         <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/about</p>
-        <h1 className="text-4xl font-semibold text-slate-100 mb-4 tracking-tight leading-tight">
-          Ashvin Misro
+        <h1 className="text-4xl font-semibold text-slate-100 mb-4 tracking-tight leading-tight font-mono">
+          <ScrambleText text="Ashvin Misro" />
         </h1>
         <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
           Software engineer and researcher focused on machine learning systems
@@ -56,7 +58,7 @@ export default function AboutMe() {
               <div className="flex flex-wrap gap-2">
                 {items.map((item) => (
                   <span key={item}
-                    className="text-sm text-slate-300 bg-[#161b22] border border-[#21262d] px-2.5 py-1 rounded-md">
+                    className="text-sm text-slate-300 bg-[#161b22] border border-[#21262d] px-2.5 py-1 rounded-md hover:border-blue-500/30 hover:text-slate-100 transition-colors cursor-default">
                     {item}
                   </span>
                 ))}
