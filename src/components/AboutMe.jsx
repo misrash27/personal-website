@@ -2,7 +2,7 @@ import ScrambleText from './ScrambleText'
 
 const skills = [
   { category: 'Technical', items: ['Python', 'Java', 'HTML', 'Data Analysis', 'Excel'] },
-  { category: 'Languages', items: ['English', 'Spanish (Intermediate)'] },
+  { category: 'Languages', items: ['English', 'Spanish (Advanced)'] },
   { category: 'Other', items: ['Leadership', 'Java Certified', 'Problem Solving'] },
 ]
 
@@ -39,13 +39,11 @@ export default function AboutMe() {
       <section className="mb-20">
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
-          I'm a student at Issaquah High School where I serve as ASB Treasurer, managing a budget
-          of over $3 million. I'm on FRC Team 1318 (Issaquah Eagles) on the analytics subteam,
-          where I've scouted 250+ matches and helped build tools to track robot performance.
+          I go to Issaquah High School. I'm ASB Treasurer, on FRC Team 1318's analytics subteam,
+          captain of the JV tennis team, in DECA, and tutor through PeerGuide.
         </p>
         <p className="text-slate-400 leading-relaxed">
-          I also tutor younger students through PeerGuide, compete in DECA, and captain the JV
-          tennis team. Outside of school I play piano, ski, and enjoy cooking.
+          Outside of school I play piano, ski, and cook.
         </p>
       </section>
 

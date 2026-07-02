@@ -68,7 +68,7 @@ const education = [
 
 const skills = [
   { category: 'Technical', items: ['Python', 'Java', 'HTML', 'Data Analysis', 'Excel'] },
-  { category: 'Languages', items: ['English', 'Spanish (Intermediate)'] },
+  { category: 'Languages', items: ['English', 'Spanish (Advanced)'] },
   { category: 'Other', items: ['Leadership', 'Java Certified', 'Problem Solving'] },
 ]
 
