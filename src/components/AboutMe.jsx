@@ -1,9 +1,9 @@
 import ScrambleText from './ScrambleText'
 
 const skills = [
-  { category: 'Technical', items: ['Python', 'HTML', 'Java', 'Data Analysis'] },
-  { category: 'Languages', items: ['English', 'Spanish (Advanced)'] },
-  { category: 'Other', items: ['Leadership', 'Java Certified'] },
+  { category: 'Technical', items: ['Python', 'Java', 'HTML', 'Data Analysis', 'Excel'] },
+  { category: 'Languages', items: ['English', 'Spanish (Intermediate)'] },
+  { category: 'Other', items: ['Leadership', 'Java Certified', 'Problem Solving'] },
 ]
 
 export default function AboutMe() {
@@ -16,7 +16,7 @@ export default function AboutMe() {
           <ScrambleText text="Ashvin Misro" />
         </h1>
         <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-          Rising senior at Issaquah High School with a passion for robotics and technology.
+          Student at Issaquah High School passionate about robotics, data, and leadership.
           Based in Seattle, WA.
         </p>
         <div className="flex flex-wrap items-center gap-5">
@@ -39,13 +39,13 @@ export default function AboutMe() {
       <section className="mb-20">
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
-          I'm a student at Issaquah High School where I'm involved in ASB, having held multiple
-          leadership positions. I'm also on the tennis team and on FRC Team 1318 (Issaquah
-          Eagles) as part of the analytics subteam, using data to help our drive team make better
-          decisions during competition.
+          I'm a student at Issaquah High School where I serve as ASB Treasurer, managing a budget
+          of over $3 million. I'm on FRC Team 1318 (Issaquah Eagles) on the analytics subteam,
+          where I've scouted 250+ matches and helped build tools to track robot performance.
         </p>
         <p className="text-slate-400 leading-relaxed">
-          Outside of school I enjoy skiing and listening to music.
+          I also tutor younger students through PeerGuide, compete in DECA, and captain the JV
+          tennis team. Outside of school I play piano, ski, and enjoy cooking.
         </p>
       </section>
 

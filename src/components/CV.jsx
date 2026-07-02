@@ -1,49 +1,75 @@
-const activities = [
+const experiences = [
   {
-    role: 'Analytics Subteam Member',
+    role: 'Analytics Team Member',
     company: 'FRC Team 1318 – Issaquah Eagles',
-    period: '2023 – Present',
+    period: 'Sep 2024 – Present',
     location: 'Issaquah, WA',
     bullets: [
-      'Collect and analyze match scouting data to inform drive team strategy during competition',
-      'Build tools to visualize robot performance trends across qualification and playoff matches',
+      'Helped design a website used to record scouting data for Team 1318\'s competitions.',
+      'Contributed to front-end UI and functionality to log information about other teams\' robots.',
+      'Spent over 100 hours on the team learning Python and basic electrical engineering.',
+      'Used bandsaw, miter saw, and electrical circuits to build the robot and practice field.',
+      'Scouted over 250 games to form alliances based on robot performance and strengths.',
     ],
   },
   {
-    role: 'Associated Student Body (ASB)',
+    role: 'ASB Treasurer',
     company: 'Issaquah High School',
-    period: '2022 – Present',
+    period: 'Jun 2024 – Present',
     location: 'Issaquah, WA',
     bullets: [
-      'Held multiple leadership positions organizing school-wide events and student initiatives',
-      'Collaborated with administration and student body to represent school community interests',
+      'Managed a budget of over $3 million alongside the school bookkeeper.',
+      'Placed and authorized multiple Purchase Order forms.',
+      'Allocated over $500,000 to clubs and sports at Issaquah High School.',
     ],
   },
   {
-    role: 'Tennis Team',
+    role: 'JV Tennis Captain',
     company: 'Issaquah High School',
-    period: '2022 – Present',
+    period: 'Aug 2023 – Present',
     location: 'Issaquah, WA',
     bullets: [
-      'Compete as a member of the high school tennis team',
+      'Captain of Issaquah High School\'s Junior Varsity tennis team.',
+      'Tennis player of 5 years.',
     ],
   },
-]
-
-const skills = [
-  { category: 'Technical', items: ['Python', 'HTML', 'Java', 'Data Analysis'] },
-  { category: 'Languages', items: ['English', 'Spanish (Advanced Proficiency)'] },
-  { category: 'Certifications', items: ['Java Certified'] },
-  { category: 'Other', items: ['Leadership', 'Skiing', 'Tennis'] },
+  {
+    role: 'Tutor',
+    company: 'PeerGuide',
+    period: 'Jul 2021 – Present',
+    location: 'Issaquah, WA',
+    bullets: [
+      'Tutored younger students in math and English for 4 hours a week for 3+ years.',
+      'Learn more at peerguide.org.',
+    ],
+  },
+  {
+    role: 'DECA Member',
+    company: 'Issaquah High School – DECA Area 4',
+    period: 'Sep 2023 – Present',
+    location: 'Issaquah, WA',
+    bullets: [
+      'Active member participating in leadership training and competitive events.',
+      'Competed in Business Services Team Decision Making (BTDM) and Marketing Management Team Decision Making (MTDM).',
+      'Demonstrated skills in strategic planning, communication, and problem-solving under timed conditions.',
+    ],
+  },
 ]
 
 const education = [
   {
     degree: 'High School Diploma (in progress)',
     school: 'Issaquah High School',
-    period: '2022 – 2026',
-    detail: 'Rising Senior · Seattle, WA',
+    period: 'Expected Jun 2027',
+    detail: 'GPA 3.81',
+    courses: 'AP Calculus AB, AP Physics C: Mech, AP English Language & Composition, AP US History, AP Computer Science A, AP Computer Science Principles, AP European History, AP Spanish Language, Pre-Calculus, Algebra 2, Chemistry, Physics, Honors Lit & Comp 9 & 10, ASB, Honors Spanish 2 & 3',
   },
+]
+
+const skills = [
+  { category: 'Technical', items: ['Python', 'Java', 'HTML', 'Data Analysis', 'Excel'] },
+  { category: 'Languages', items: ['English', 'Spanish (Intermediate)'] },
+  { category: 'Other', items: ['Leadership', 'Java Certified', 'Problem Solving'] },
 ]
 
 export default function CV() {
@@ -63,20 +89,39 @@ export default function CV() {
         </button>
       </div>
 
-      <CVSection title="Activities">
+      <CVSection title="Education">
+        <div className="space-y-6">
+          {education.map((edu, i) => (
+            <div key={i}>
+              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
+                <div>
+                  <span className="font-medium text-slate-200">{edu.degree}</span>
+                  <span className="text-slate-600 mx-2">·</span>
+                  <span className="text-slate-400">{edu.school}</span>
+                </div>
+                <span className="text-sm text-slate-600 font-mono">{edu.period}</span>
+              </div>
+              <p className="text-sm text-slate-500 mb-2">{edu.detail}</p>
+              <p className="text-xs text-slate-600 leading-relaxed"><span className="text-slate-700">Courses: </span>{edu.courses}</p>
+            </div>
+          ))}
+        </div>
+      </CVSection>
+
+      <CVSection title="Experience">
         <div className="space-y-10">
-          {activities.map((item, i) => (
+          {experiences.map((job, i) => (
             <div key={i}>
               <div className="flex flex-wrap items-baseline justify-between gap-2 mb-3">
                 <div>
-                  <span className="font-medium text-slate-200">{item.role}</span>
+                  <span className="font-medium text-slate-200">{job.role}</span>
                   <span className="text-slate-600 mx-2">·</span>
-                  <span className="text-slate-400">{item.company}</span>
+                  <span className="text-slate-400">{job.company}</span>
                 </div>
-                <div className="text-sm text-slate-600 font-mono">{item.period} · {item.location}</div>
+                <div className="text-sm text-slate-600 font-mono">{job.period} · {job.location}</div>
               </div>
               <ul className="space-y-1.5">
-                {item.bullets.map((b, j) => (
+                {job.bullets.map((b, j) => (
                   <li key={j} className="text-sm text-slate-400 flex gap-3">
                     <span className="text-slate-700 mt-0.5 flex-shrink-0">—</span>
                     {b}
@@ -104,25 +149,6 @@ export default function CV() {
           ))}
         </div>
       </CVSection>
-
-      <CVSection title="Education">
-        <div className="space-y-6">
-          {education.map((edu, i) => (
-            <div key={i}>
-              <div className="flex flex-wrap items-baseline justify-between gap-2 mb-1">
-                <div>
-                  <span className="font-medium text-slate-200">{edu.degree}</span>
-                  <span className="text-slate-600 mx-2">·</span>
-                  <span className="text-slate-400">{edu.school}</span>
-                </div>
-                <span className="text-sm text-slate-600 font-mono">{edu.period}</span>
-              </div>
-              <p className="text-sm text-slate-600">{edu.detail}</p>
-            </div>
-          ))}
-        </div>
-      </CVSection>
-
     </div>
   )
 }
