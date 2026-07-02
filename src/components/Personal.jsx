@@ -1,34 +1,10 @@
 const hobbies = [
-  {
-    name: 'Piano',
-    detail: '7 years',
-    description: 'Classical, pop, whatever.',
-  },
-  {
-    name: 'Tennis',
-    detail: '5 years',
-    description: 'Captain of the IHS JV team.',
-  },
-  {
-    name: 'Skiing',
-    detail: '10+ years',
-    description: 'Pacific Northwest winters are good for something.',
-  },
-  {
-    name: 'Biking',
-    detail: null,
-    description: 'Usually just around the area.',
-  },
-  {
-    name: 'Baking & Cooking',
-    detail: null,
-    description: 'I actually like doing this.',
-  },
-  {
-    name: 'Travel',
-    detail: null,
-    description: 'Wherever I can get to.',
-  },
+  { name: 'Piano', detail: '7 years' },
+  { name: 'Tennis', detail: '5 years' },
+  { name: 'Skiing', detail: '10+ years' },
+  { name: 'Biking', detail: null },
+  { name: 'Baking & Cooking', detail: null },
+  { name: 'Travel', detail: null },
 ]
 
 export default function Personal() {
@@ -48,7 +24,6 @@ export default function Personal() {
                 <span className="font-medium text-slate-200">{h.name}</span>
                 {h.detail && <span className="text-xs font-mono text-slate-600">{h.detail}</span>}
               </div>
-              <p className="text-sm text-slate-500 leading-relaxed">{h.description}</p>
             </div>
           ))}
         </div>

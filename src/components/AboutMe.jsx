@@ -72,7 +72,7 @@ export default function AboutMe() {
 
 function SectionLabel({ children }) {
   return (
-    <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-6">{children}</p>
+    <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-6 underline underline-offset-4">{children}</p>
   )
 }
 
