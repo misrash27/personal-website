@@ -7,8 +7,10 @@ export default function Personal() {
       </div>
 
       <p className="text-slate-400 leading-relaxed max-w-2xl">
-        I've been playing piano for 7 years and tennis for 5. I've been skiing for over 10 years,
-        and when I'm not doing any of that I like biking, baking and cooking, and traveling.
+        I've been playing piano for 7 years — I especially like playing songs in 3/4 time. I've
+        played tennis for 5 years and skied for over 10, mostly at Whistler in BC. When I'm not
+        doing any of that I like biking, baking and cooking (my favorite thing to bake is creme
+        brulee), and traveling.
       </p>
     </div>
   )
