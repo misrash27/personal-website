@@ -12,21 +12,20 @@ export default function Personal() {
     <div className="max-w-4xl mx-auto px-6 py-20">
       <div className="mb-16">
         <p className="text-xs font-mono text-blue-400 mb-4 tracking-widest">~/personal</p>
-        <h1 className="text-2xl font-semibold text-slate-100 tracking-tight mb-3">Outside of school</h1>
+        <h1 className="text-2xl font-semibold text-slate-100 tracking-tight mb-3">Beyond the classroom</h1>
       </div>
 
-      <section className="mb-16">
-        <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-8">Hobbies</p>
-        <div className="grid sm:grid-cols-2 gap-5">
+      <section>
+        <p className="text-xs font-mono text-slate-600 uppercase tracking-widest mb-8">I like to</p>
+        <ul className="space-y-3">
           {hobbies.map((h) => (
-            <div key={h.name} className="bg-[#161b22] border border-[#21262d] rounded-lg p-5 hover:border-slate-600 transition-colors">
-              <div className="flex items-baseline gap-2 mb-2">
-                <span className="font-medium text-slate-200">{h.name}</span>
-                {h.detail && <span className="text-xs font-mono text-slate-600">{h.detail}</span>}
-              </div>
-            </div>
+            <li key={h.name} className="flex items-baseline gap-3">
+              <span className="text-slate-700">—</span>
+              <span className="text-slate-300">{h.name}</span>
+              {h.detail && <span className="text-xs font-mono text-slate-600">{h.detail}</span>}
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </div>
   )

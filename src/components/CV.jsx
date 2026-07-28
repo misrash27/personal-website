@@ -62,7 +62,7 @@ const education = [
     school: 'Issaquah High School',
     period: 'Expected Jun 2027',
     detail: 'GPA 3.81',
-    courses: 'AP Calculus AB, AP Physics C: Mech, AP English Language & Composition, AP US History, AP Computer Science A, AP Computer Science Principles, AP European History, AP Spanish Language, Pre-Calculus, Algebra 2, Chemistry, Physics, Honors Lit & Comp 9 & 10, ASB, Honors Spanish 2 & 3',
+    courses: 'AP Calculus AB, AP Physics C: Mech, AP English Language & Composition, AP US History, AP Computer Science A, AP Computer Science Principles, AP European History, AP Spanish Language, Pre-Calculus, Algebra 2, Chemistry, Physics, Honors Lit & Comp 9 & 10, ASB, Honors Spanish 2 & 3, Spanish 4 CHS, AP Spanish (self-studied)',
   },
 ]
 
