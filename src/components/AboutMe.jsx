@@ -39,7 +39,7 @@ export default function AboutMe() {
       <section className="mb-20">
         <SectionLabel>About</SectionLabel>
         <p className="text-slate-400 leading-relaxed mb-4">
-          I go to Issaquah High School. I'm ASB Treasurer, on FRC Team 1318's analytics subteam,
+          I go to Issaquah High School. I'm ASB Vice President, on FRC Team 1318's analytics subteam,
           captain of the JV tennis team, in DECA, and tutor through PeerGuide.
         </p>
         <p className="text-slate-400 leading-relaxed">
