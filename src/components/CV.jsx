@@ -1,8 +1,8 @@
 const experiences = [
   {
     role: 'Analytics Team Member',
-    company: 'FRC Team 1318 – Issaquah Eagles',
-    period: 'Sep 2024 – Present',
+    company: 'FRC Team 1318 - Issaquah Eagles',
+    period: 'Sep 2024 - Present',
     location: 'Issaquah, WA',
     bullets: [
       'Helped design a website used to record scouting data for Team 1318\'s competitions.',
@@ -15,7 +15,7 @@ const experiences = [
   {
     role: 'ASB Treasurer',
     company: 'Issaquah High School',
-    period: 'Jun 2024 – Present',
+    period: 'Jun 2024 - Present',
     location: 'Issaquah, WA',
     bullets: [
       'Managed a budget of over $3 million alongside the school bookkeeper.',
@@ -26,7 +26,7 @@ const experiences = [
   {
     role: 'JV Tennis Captain',
     company: 'Issaquah High School',
-    period: 'Aug 2023 – Present',
+    period: 'Aug 2023 - Present',
     location: 'Issaquah, WA',
     bullets: [
       'Captain of Issaquah High School\'s Junior Varsity tennis team.',
@@ -36,7 +36,7 @@ const experiences = [
   {
     role: 'Tutor',
     company: 'PeerGuide',
-    period: 'Jul 2021 – Present',
+    period: 'Jul 2021 - Present',
     location: 'Issaquah, WA',
     bullets: [
       'Tutored younger students in math and English for 4 hours a week for 3+ years.',
@@ -45,8 +45,8 @@ const experiences = [
   },
   {
     role: 'DECA Member',
-    company: 'Issaquah High School – DECA Area 4',
-    period: 'Sep 2023 – Present',
+    company: 'Issaquah High School - DECA Area 4',
+    period: 'Sep 2023 - Present',
     location: 'Issaquah, WA',
     bullets: [
       'Active member participating in leadership training and competitive events.',
@@ -123,7 +123,7 @@ export default function CV() {
               <ul className="space-y-1.5">
                 {job.bullets.map((b, j) => (
                   <li key={j} className="text-sm text-slate-400 flex gap-3">
-                    <span className="text-slate-700 mt-0.5 flex-shrink-0">—</span>
+                    <span className="text-slate-700 mt-0.5 flex-shrink-0">-</span>
                     {b}
                   </li>
                 ))}
