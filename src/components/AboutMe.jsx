@@ -16,7 +16,8 @@ export default function AboutMe() {
           <ScrambleText text="Ashvin Misro" />
         </h1>
         <p className="text-lg text-slate-400 mb-8 max-w-xl leading-relaxed">
-          Student at Issaquah High School. Seattle, WA.
+          Student at Issaquah High School passionate about robotics, data, and leadership.
+          Based in Seattle, WA.
         </p>
         <div className="flex flex-wrap items-center gap-5">
           <a href="https://github.com/misrash27" target="_blank" rel="noreferrer"
@@ -37,9 +38,12 @@ export default function AboutMe() {
       {/* Bio */}
       <section className="mb-20">
         <SectionLabel>About</SectionLabel>
+        <p className="text-slate-400 leading-relaxed mb-4">
+          I go to Issaquah High School. I'm ASB Treasurer, on FRC Team 1318's analytics subteam,
+          captain of the JV tennis team, in DECA, and tutor through PeerGuide.
+        </p>
         <p className="text-slate-400 leading-relaxed">
-          I'm a senior at Issaquah High School. I'm the ASB Treasurer, do analytics for FRC Team
-          1318, captain the JV tennis team, compete in DECA, and tutor kids through PeerGuide.
+          Outside of school I play piano, ski, and cook.
         </p>
       </section>
 
